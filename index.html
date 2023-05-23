@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+           
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        var wynik = 0;
+        var up = 1;
+        var cenaup = 10;
+
+        function dodajWynik() {
+            wynik = wynik + up;
+            var wynikElement = document.getElementById("wynik");
+            wynikElement.innerHTML = wynik;
+        }
+        function ulepsz() {
+
+                if(wynik >= cenaup){
+                    up = up + 1;
+                    var shopElement = document.getElementById("shop");
+                    shopElement.innerHTML = "kupiono";
+                    wynik = wynik - cenaup;
+                    cenadalej()
+                }else {
+                var shopElement = document.getElementById("shop");
+                shopElement.innerHTML = "za mało kasy!";
+            
+            }
+
+            }
+            function cenadalej() {
+
+                cenaup = cenaup * 2;
+    
+                var cenauppElement = document.getElementById("cenaupp");
+                cenauppElement.innerHTML = cenaup;
+
+            }
+    </script>
+</head>
+<body>
+    <h1>Money: <span id="wynik">0</span></h1>
+    <button class="button" onclick="dodajWynik()">click!</button>
+    <button class="button" onclick="ulepsz()">ulepsz</button>
+    <h1>Shop: <span id="shop">!</span></h1>
+    <h1>Cena nastepnego poziomu: <span id="cenaupp"> </span></h1>
+</body>
+</html>
