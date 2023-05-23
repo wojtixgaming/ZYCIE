@@ -1,2 +1,0 @@
-# ZYCIE
-# ZYCIE
